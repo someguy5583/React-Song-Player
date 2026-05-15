@@ -358,11 +358,11 @@ function App() {
     return () => {
       if (typeof liricle.off === "function") {
         liricle.off("load", handleLoad);
-        liricle.off("onSync", handleSync);
+        liricle.off("sync", handleSync);
       } else 
       if (typeof liricle.removeListener === "function") {
         liricle.removeListener("load", handleLoad);
-        liricle.removeListener("onSync", handleSync);
+        liricle.removeListener("sync", handleSync);
       }
     };
   }, []);
@@ -425,6 +425,7 @@ function App() {
     setValue(0);
 
     setisShuffled(false);
+    setCurrentLyric("");
   }
 
   function nextSong() {
@@ -435,6 +436,7 @@ function App() {
     setValue(0);
 
     setisShuffled(false);
+    setCurrentLyric("");
   }
 
   function mute() {
@@ -442,11 +444,13 @@ function App() {
   }
 
   function showLyrics() {
-    // document.getElementById("lyrics").classList.remove("hidden");
+    // document.getElementById("lyricUI").classList.remove("hidden");
+    setCurrentLyric(line.text);
   }
 
   function hideLyrics() {
-    // document.getElementById("lyrics").classList.add("hidden");
+    // document.getElementById("lyricUI").classList.add("hidden");
+    setCurrentLyric("");
   }
 
   if (volume === 0) {
@@ -626,7 +630,7 @@ function App() {
               </div>
             </div>
 
-            <div className="lyrics w-full flex flex-col items-center justify-center h-10 -mt-5 px-5 pb-4">
+            <div className="lyrics w-full flex flex-col items-center justify-center h-10 -mt-5 px-5 pb-4" id="lyricUI">
               <p className={`text-center text-auto line-clamp-1 w-full font-semibold ${currentSong.accentText}`}>
                 {currentLyric}
               </p>
@@ -637,8 +641,8 @@ function App() {
               style={{
                 background: `linear-gradient(to right, ${currentSong.accentDark}, ${currentSong.accentLight})`,
               }}
-              onMouseEnter={showLyrics}
-              onMouseLeave={hideLyrics}
+              onMouseEnter={hideLyrics}
+              onMouseLeave={showLyrics}
             >
               <div
                 className="volume relative flex flex-col items-center"
