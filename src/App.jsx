@@ -8,7 +8,14 @@ function formatTime(seconds) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-function SingleSlider({ value, setValue, isPlaying, accent, duration, audioRef }) {
+function SingleSlider({
+  value,
+  setValue,
+  isPlaying,
+  accent,
+  duration,
+  audioRef,
+}) {
   const min = 0;
   const trackMax = duration > 0 ? duration : 1;
   const percent = duration > 0 ? (value / duration) * 100 : 0;
@@ -139,7 +146,9 @@ function App() {
   }, []);
 
   function getAudioSrc(title) {
-    const entry = Object.entries(audioFiles).find(([path]) => path.includes(title));
+    const entry = Object.entries(audioFiles).find(([path]) =>
+      path.includes(title),
+    );
     return entry ? entry[1].default : null;
   }
 
@@ -150,7 +159,8 @@ function App() {
       accentLight: "#3b82f6",
       accentDark: "#8b5cf6",
       accentCSS: "#3b82f6",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b2732c78500833c22279f8bef841",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b2732c78500833c22279f8bef841",
       title: "Blue",
       artist: "Yung Kai",
     },
@@ -162,7 +172,7 @@ function App() {
       accentDark: "#b45309",
       accentCSS: "#f59e0b",
       albumCover:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/bb/3e/97bb3e8e-970a-ce96-ce09-25cd5c5f959e/663918564691.jpg/600x600bf-60.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/bb/3e/97bb3e8e-970a-ce96-ce09-25cd5c5f959e/663918564691.jpg/600x600bf-60.jpg",
       title: "Mona Lisa",
       artist: "lucasp007",
     },
@@ -173,7 +183,8 @@ function App() {
       accentLight: "#a16207",
       accentDark: "#713f12",
       accentCSS: "#854d0e",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b273bd8021d17038ec66b7f99161",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b273bd8021d17038ec66b7f99161",
       title: "I'd Rather Pretend",
       artist: "Bryant Barnes",
     },
@@ -185,7 +196,7 @@ function App() {
       accentDark: "#c2410c",
       accentCSS: "#ea580c",
       albumCover:
-      "https://cdn-images.dzcdn.net/images/cover/44310c327169b1ca1958529ffdd37f38/0x1900-000000-80-0-0.jpg",
+        "https://cdn-images.dzcdn.net/images/cover/44310c327169b1ca1958529ffdd37f38/0x1900-000000-80-0-0.jpg",
       title: "Notion",
       artist: "The Rare Occasions",
     },
@@ -196,7 +207,8 @@ function App() {
       accentLight: "#cbd5e1",
       accentDark: "#64748b",
       accentCSS: "#ac9e8e",
-      albumCover: "https://cdn-images.dzcdn.net/images/cover/fea07231e297ee0c926aad963fc333bd/500x500.jpg",
+      albumCover:
+        "https://cdn-images.dzcdn.net/images/cover/fea07231e297ee0c926aad963fc333bd/500x500.jpg",
       title: "Babydoll",
       artist: "Dominic Fike",
     },
@@ -207,7 +219,8 @@ function App() {
       accentLight: "#22c55e",
       accentDark: "#15803d",
       accentCSS: "#16a34a",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b273d781855d5c8cf2a32d0e4dc9",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b273d781855d5c8cf2a32d0e4dc9",
       title: "Wildflower",
       artist: "Yung Kai",
     },
@@ -218,7 +231,8 @@ function App() {
       accentLight: "#1d4ed8",
       accentDark: "#1e3a8a",
       accentCSS: "#1e40af",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b273310e982d2eb5107de437ef7b",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b273310e982d2eb5107de437ef7b",
       title: "in the air",
       artist: "jayo",
     },
@@ -229,7 +243,8 @@ function App() {
       accentLight: "#94a3b8",
       accentDark: "#475569",
       accentCSS: "#64748b",
-      albumCover: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f4/73/ea/f473eabb-b735-b624-2004-b1e82b43ee71/artwork.jpg/600x600cc.webp",
+      albumCover:
+        "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f4/73/ea/f473eabb-b735-b624-2004-b1e82b43ee71/artwork.jpg/600x600cc.webp",
       title: "mary jane",
       artist: "Zape",
     },
@@ -240,7 +255,8 @@ function App() {
       accentLight: "#84cc16",
       accentDark: "#4d7c0f",
       accentCSS: "#65a30d",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b273ea8cc399a060bde00c046a10",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b273ea8cc399a060bde00c046a10",
       title: "can't shake off",
       artist: "vyreli",
     },
@@ -251,7 +267,8 @@ function App() {
       accentLight: "#fbbf24",
       accentDark: "#d97706",
       accentCSS: "#f59e0b",
-      albumCover: "https://m.media-amazon.com/images/I/31lYyvugC5L._UXNaN_FMjpg_QL85_.jpg",
+      albumCover:
+        "https://m.media-amazon.com/images/I/31lYyvugC5L._UXNaN_FMjpg_QL85_.jpg",
       title: "Yellow",
       artist: "Coldplay",
     },
@@ -262,7 +279,8 @@ function App() {
       accentLight: "#f97316",
       accentDark: "#c2410c",
       accentCSS: "#ea580c",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b273f0139cebb837aff8bc6605b7",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b273f0139cebb837aff8bc6605b7",
       title: "her smile",
       artist: "Keanu Bicol",
     },
@@ -273,7 +291,8 @@ function App() {
       accentLight: "#a16207",
       accentDark: "#713f12",
       accentCSS: "#854d0e",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b273bd8021d17038ec66b7f99161",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b273bd8021d17038ec66b7f99161",
       title: "Want You All The Time",
       artist: "Bryant Barnes",
     },
@@ -281,10 +300,11 @@ function App() {
     song13: {
       accent: "bg-green-600",
       accentText: "text-green-600",
-      accentLight: "#22c55e",
-      accentDark: "#15803d",
-      accentCSS: "#16a34a",
-      albumCover: "https://i.scdn.co/image/ab67616d0000b27341a1946f71c6704dccecb971",
+      accentLight: "#ff9d8a",
+      accentDark: "#a36559",
+      accentCSS: "#d78575",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d0000b27341a1946f71c6704dccecb971",
       title: "Is This Love To You",
       artist: "Bryant Barnes",
     },
@@ -292,10 +312,11 @@ function App() {
     song14: {
       accent: "bg-green-600",
       accentText: "text-green-600",
-      accentLight: "#22c55e",
-      accentDark: "#15803d",
-      accentCSS: "#16a34a",
-      albumCover: "https://i.scdn.co/image/ab67616d00001e02009904484f6436f84cbd4b60",
+      accentLight: "#7d593d",
+      accentDark: "#312318",
+      accentCSS: "#7e5b3f",
+      albumCover:
+        "https://i.scdn.co/image/ab67616d00001e02009904484f6436f84cbd4b60",
       title: "Don't Want A Love Song",
       artist: "Bryant Barnes",
     },
@@ -311,6 +332,11 @@ function App() {
 
   const [lyricFileName, setLyricFileName] = useState("");
 
+  const songQueue = Array.from(
+    { length: Object.keys(songs).length },
+    (_, i) => i + 1,
+  );
+
   useEffect(() => {
     if (currentSong && currentSong.artist && currentSong.title) {
       setLyricFileName(`${currentSong.artist} - ${currentSong.title}.lrc`);
@@ -321,7 +347,12 @@ function App() {
   const [currentLyric, setCurrentLyric] = useState("");
 
   useEffect(() => {
-    if (!lyricFileName || lyricFileName.trim() === "" || lyricFileName === " - .lrc") return;
+    if (
+      !lyricFileName ||
+      lyricFileName.trim() === "" ||
+      lyricFileName === " - .lrc"
+    )
+      return;
 
     fetch(`/lyrics/${encodeURIComponent(lyricFileName)}`)
       .then((res) => {
@@ -330,7 +361,7 @@ function App() {
       })
       .then((data) => {
         setLyrics(data);
-    })
+      });
   }, [lyricFileName]);
 
   const liricleRef = useRef(new Liricle());
@@ -359,8 +390,7 @@ function App() {
       if (typeof liricle.off === "function") {
         liricle.off("load", handleLoad);
         liricle.off("sync", handleSync);
-      } else 
-      if (typeof liricle.removeListener === "function") {
+      } else if (typeof liricle.removeListener === "function") {
         liricle.removeListener("load", handleLoad);
         liricle.removeListener("sync", handleSync);
       }
@@ -400,13 +430,27 @@ function App() {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
-    }
 
-    setIsPlaying((prev) => !prev);
+      setIsPlaying((prev) => !prev);
+    }
   }
 
   function shuffle() {
-    setisShuffled((prev) => !prev);
+    const nextIsShuffled = !isShuffled;
+    setisShuffled(nextIsShuffled);
+
+    if (nextIsShuffled) {
+      const shuffledQueue = [...songQueue];
+
+      for (let i = shuffledQueue.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledQueue[i], shuffledQueue[j]] = [
+          shuffledQueue[j],
+          shuffledQueue[i],
+        ];
+      }
+      setSongQueue(shuffledQueue); // Replace with your queue state setter
+    }
   }
 
   function showSlide() {
@@ -445,7 +489,7 @@ function App() {
 
   function showLyrics() {
     // document.getElementById("lyricUI").classList.remove("hidden");
-    setCurrentLyric(line.text);
+    // setCurrentLyric(line.text);
   }
 
   function hideLyrics() {
@@ -489,7 +533,12 @@ function App() {
     );
   } else {
     volumeIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="size-6"
+      >
         <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z" />
         <path d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z" />
       </svg>
@@ -499,7 +548,10 @@ function App() {
   return (
     <>
       <div className="h-screen bg-gradient-to-tl from-blue-700 to-blue-400 flex justify-center items-center p-0 m-0">
-        <div className="bg-neutral-50 h-183 w-100 rounded-4xl p-0 overflow-hidden" id="app">
+        <div
+          className="bg-neutral-50 h-183 w-100 rounded-4xl p-0 overflow-hidden"
+          id="app"
+        >
           <div className="nav flex items-center justify-between w-full bg-neutral-50 text-2xl font-[500] font-[Quicksand] p-7 shadow-md h-20 rounded-3xl">
             <div className="flex items-center justify-center">
               <svg
@@ -510,13 +562,20 @@ function App() {
                 stroke="currentColor"
                 className="size-6"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
               </svg>
             </div>
 
             <p className="text-xl leading-none">Now Playing</p>
 
-            <button className="flex justify-center items-center hover:opacity-60" onClick={queueOpen}>
+            <button
+              className="flex justify-center items-center hover:opacity-60"
+              onClick={queueOpen}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -539,8 +598,14 @@ function App() {
               <div className={`rounded-3xl w-76 h-76 mt-6 overflow-hidden`}>
                 <img src={`${currentSong.albumCover}`} alt="Blue" />
               </div>
-              <p className={`font-bold text-3xl mx-full line-clamp-1 ${currentSong.accentText} mt-3`}>{currentSong.title}</p>
-              <p className={`text-sm ${currentSong.accentText}`}>{currentSong.artist}</p>
+              <p
+                className={`font-bold text-3xl mx-full line-clamp-1 ${currentSong.accentText} mt-3`}
+              >
+                {currentSong.title}
+              </p>
+              <p className={`text-sm ${currentSong.accentText}`}>
+                {currentSong.artist}
+              </p>
             </div>
           </div>
 
@@ -630,8 +695,13 @@ function App() {
               </div>
             </div>
 
-            <div className="lyrics w-full flex flex-col items-center justify-center h-10 -mt-5 px-5 pb-4" id="lyricUI">
-              <p className={`text-center text-auto line-clamp-1 w-full font-semibold ${currentSong.accentText}`}>
+            <div
+              className="lyrics w-full flex flex-col items-center justify-center h-10 -mt-5 px-5 pb-4"
+              id="lyricUI"
+            >
+              <p
+                className={`text-center text-auto line-clamp-1 w-full font-semibold ${currentSong.accentText}`}
+              >
                 {currentLyric}
               </p>
             </div>
@@ -650,7 +720,9 @@ function App() {
                 onMouseLeave={hideSlide}
               >
                 {/* Slider container */}
-                <div className={`volume-popup ${showVolume ? "volume-open" : "volume-closed"}`}>
+                <div
+                  className={`volume-popup ${showVolume ? "volume-open" : "volume-closed"}`}
+                >
                   <input
                     type="range"
                     min="0"
@@ -667,7 +739,10 @@ function App() {
                 </div>
 
                 {/* Volume icon */}
-                <button className="text-neutral-50 cursor-pointer z-10" onClick={mute}>
+                <button
+                  className="text-neutral-50 cursor-pointer z-10"
+                  onClick={mute}
+                >
                   {volumeIcon}
                 </button>
               </div>
@@ -701,7 +776,10 @@ function App() {
           id="queue"
         >
           <div className="nav flex items-center justify-between w-full bg-neutral-50 text-2xl font-[600] font-[Raleway] p-7 shadow-lg h-20 rounded-3xl">
-            <button className="flex justify-center items-center cursor-pointer" id="search">
+            <button
+              className="flex justify-center items-center cursor-pointer"
+              id="search"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -722,7 +800,10 @@ function App() {
 
             <p className="text-xl leading-none font-[500]">Queue</p>
 
-            <button className="flex justify-center items-center" onClick={queueClose}>
+            <button
+              className="flex justify-center items-center"
+              onClick={queueClose}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -731,7 +812,11 @@ function App() {
                 stroke="currentColor"
                 className="size-6"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
               </svg>
             </button>
           </div>
@@ -744,4 +829,3 @@ function App() {
 }
 
 export default App;
-
